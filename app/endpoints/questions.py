@@ -13,8 +13,13 @@ async def register_candidate(candidate:CandidateRegister):
     """
     Register a new candidate.
     """
-    if candidate_collection.find_one({"email":candidate.email}):
-        raise HTTPException(status_code=400, detail="Email already registered")
+    existing_candidate=candidate_collection.find_one({"email":candidate.email})
+    if existing_candidate:
+        return{
+            "message":"Candidate already registered",
+            "candidate_email":existing_candidate["email"],
+            "candidate_name":existing_candidate["first_name"]
+        }
     # check if the candidate already exists
     candidate_data={
         **candidate.dict(),
@@ -23,7 +28,12 @@ async def register_candidate(candidate:CandidateRegister):
     }
 
     candidate_collection.insert_one(candidate_data)
-    return {"message":"Candidate registered successfully"}
+    
+    return {
+        "message":"Candidate registered successfully",
+         "candidate_email":candidate.email,
+          "candidate_name":candidate.first_name
+          }
 
 @router.post("/start_exam")
 

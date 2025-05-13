@@ -6,6 +6,7 @@ class CandidateRegister(BaseModel):
     first_name:str
     last_name:str
     email:str
+    phone_number:int
 
 class CandidateInDB(CandidateRegister):
     registered_at:str

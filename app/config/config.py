@@ -1,4 +1,4 @@
-# from pydantic import BaseSettings
+# from pydantic import BaseSettings, SettingsConfigDict
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from cryptography.fernet import Fernet

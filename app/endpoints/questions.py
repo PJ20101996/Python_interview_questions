@@ -43,7 +43,7 @@ async def register_candidate(candidate: CandidateRegister):
         "candidate_name": candidate.first_name
     }
 
-@router.post("/start_exam", response_model=StartExamResponse)
+@router.get("/start_exam", response_model=StartExamResponse)
 async def start_exam(candidate_id: str = Body(..., embed=True)):
     """Start the exam and return all 45 MCQs, 12 Descriptive, and 3 Coding questions."""
     try:

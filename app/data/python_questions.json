@@ -1,0 +1,529 @@
+[
+    {
+      "question_id": 1,
+      "category": "Python",
+      "type": 1,
+      "text": "What is the output of print(type([]))?",
+      "level": "Basic",
+      "options": {"a": "<class 'list'>", "b": "<type 'list'>", "c": "list", "d": "[]"},
+      "answer": "a"
+    },
+    {
+      "question_id": 2,
+      "category": "Python",
+      "type": 1,
+      "text": "Which of the following is immutable?",
+      "level": "Basic",
+      "options": {"a": "List", "b": "Set", "c": "Dictionary", "d": "Tuple"},
+      "answer": "d"
+    },
+    {
+      "question_id": 3,
+      "category": "Python",
+      "type": 1,
+      "text": "How do you start a comment in Python?",
+      "level": "Basic",
+      "options": {"a": "//", "b": "<!--", "c": "#", "d": "/*"},
+      "answer": "c"
+    },
+    {
+      "question_id": 4,
+      "category": "Python",
+      "type": 1,
+      "text": "What will len('Hello') return?",
+      "level": "Basic",
+      "options": {"a": "4", "b": "5", "c": "6", "d": "Error"},
+      "answer": "b"
+    },
+    {
+      "question_id": 5,
+      "category": "Python",
+      "type": 1,
+      "text": "What is the correct way to define a function in Python?",
+      "level": "Basic",
+      "options": {"a": "function myFunc():", "b": "def myFunc():", "c": "create myFunc():", "d": "func myFunc():"},
+      "answer": "b"
+    },
+    {
+      "question_id": 6,
+      "category": "Python",
+      "type": 1,
+      "text": "Which of the following is a Python keyword?",
+      "level": "Basic",
+      "options": {"a": "constant", "b": "define", "c": "yield", "d": "eval"},
+      "answer": "c"
+    },
+    {
+      "question_id": 7,
+      "category": "Python",
+      "type": 1,
+      "text": "Which method can be used to remove items from a list?",
+      "level": "Basic",
+      "options": {"a": "delete()", "b": "remove()", "c": "discard()", "d": "erase()"},
+      "answer": "b"
+    },
+    {
+      "question_id": 8,
+      "category": "Python",
+      "type": 1,
+      "text": "What does dict.keys() return?",
+      "level": "Basic",
+      "options": {"a": "All keys", "b": "All values", "c": "All items", "d": "A copy of the dictionary"},
+      "answer": "a"
+    },
+    {
+      "question_id": 9,
+      "category": "Python",
+      "type": 1,
+      "text": "Which of the following is used to handle exceptions?",
+      "level": "Basic",
+      "options": {"a": "try/except", "b": "do/catch", "c": "try/catch", "d": "handle/except"},
+      "answer": "a"
+    },
+    {
+      "question_id": 10,
+      "category": "Python",
+      "type": 1,
+      "text": "How are default arguments specified in functions?",
+      "level": "Basic",
+      "options": {"a": "def func(a=10)", "b": "def func(a==10)", "c": "def func(a:10)", "d": "def func(a => 10)"},
+      "answer": "a"
+    },
+    {
+      "question_id": 11,
+      "category": "Python",
+      "type": 1,
+      "text": "What is the output of bool(0)?",
+      "level": "Basic",
+      "options": {"a": "True", "b": "False", "c": "0", "d": "Error"},
+      "answer": "b"
+    },
+    {
+      "question_id": 12,
+      "category": "Python",
+      "type": 1,
+      "text": "Which of the following is used to install packages in Python?",
+      "level": "Basic",
+      "options": {"a": "python install", "b": "pip install", "c": "install pip", "d": "get pip"},
+      "answer": "b"
+    },
+    {
+      "question_id": 13,
+      "category": "Python",
+      "type": 1,
+      "text": "What is the output of 'Hello' * 3?",
+      "level": "Basic",
+      "options": {"a": "HelloHelloHello", "b": "Hello3", "c": "Hello Hello Hello", "d": "3Hello"},
+      "answer": "a"
+    },
+    {
+      "question_id": 14,
+      "category": "Python",
+      "type": 1,
+      "text": "Which symbol is used for exponentiation?",
+      "level": "Basic",
+      "options": {"a": "^", "b": "**", "c": "^^", "d": "exp()"},
+      "answer": "b"
+    },
+    {
+      "question_id": 15,
+      "category": "Python",
+      "type": 1,
+      "text": "What is the output of type(3.14)?",
+      "level": "Basic",
+      "options": {"a": "float", "b": "int", "c": "decimal", "d": "number"},
+      "answer": "a"
+    },
+    {
+      "question_id": 16,
+      "category": "Python",
+      "type": 1,
+      "text": "What does the range(5) function return?",
+      "level": "Intermediate",
+      "options": {"a": "[1, 2, 3, 4, 5]", "b": "[0, 1, 2, 3, 4]", "c": "[0, 1, 2, 3, 4, 5]", "d": "[1, 2, 3, 4]"},
+      "answer": "b"
+    },
+    {
+      "question_id": 17,
+      "category": "Python",
+      "type": 1,
+      "text": "Which of the following is true about Python sets?",
+      "level": "Intermediate",
+      "options": {"a": "They allow duplicate values", "b": "They are unordered", "c": "They are mutable and indexed", "d": "They are immutable"},
+      "answer": "b"
+    },
+    {
+      "question_id": 18,
+      "category": "Python",
+      "type": 1,
+      "text": "How can you catch multiple exceptions in one block?",
+      "level": "Intermediate",
+      "options": {"a": "except Exception1 | Exception2:", "b": "except Exception1 or Exception2:", "c": "except (Exception1, Exception2):", "d": "except [Exception1, Exception2]:"},
+      "answer": "c"
+    },
+    {
+      "question_id": 19,
+      "category": "Python",
+      "type": 1,
+      "text": "Which built-in function is used to get the length of a list?",
+      "level": "Intermediate",
+      "options": {"a": "size()", "b": "count()", "c": "length()", "d": "len()"},
+      "answer": "d"
+    },
+    {
+      "question_id": 20,
+      "category": "Python",
+      "type": 1,
+      "text": "What does self refer to in a class?",
+      "level": "Intermediate",
+      "options": {"a": "The class name", "b": "The module", "c": "The object instance", "d": "The method"},
+      "answer": "c"
+    },
+    {
+      "question_id": 21,
+      "category": "Python",
+      "type": 1,
+      "text": "What is the output of bool([])?",
+      "level": "Intermediate",
+      "options": {"a": "True", "b": "False", "c": "[]", "d": "Error"},
+      "answer": "b"
+    },
+    {
+      "question_id": 22,
+      "category": "Python",
+      "type": 1,
+      "text": "What is the result of 3 < 4 < 5?",
+      "level": "Intermediate",
+      "options": {"a": "True", "b": "False", "c": "Error", "d": "None"},
+      "answer": "a"
+    },
+    {
+      "question_id": 23,
+      "category": "Python",
+      "type": 1,
+      "text": "Which method is used to open a file for reading in text mode?",
+      "level": "Intermediate",
+      "options": {"a": "open(filename)", "b": "open(filename, 'r')", "c": "read(filename)", "d": "load(filename)"},
+      "answer": "b"
+    },
+    {
+      "question_id": 24,
+      "category": "Python",
+      "type": 1,
+      "text": "What does strip() do on a string?",
+      "level": "Intermediate",
+      "options": {"a": "Removes leading spaces", "b": "Removes trailing spaces", "c": "Removes both leading and trailing spaces", "d": "Deletes the string"},
+      "answer": "c"
+    },
+    {
+      "question_id": 25,
+      "category": "Python",
+      "type": 1,
+      "text": "Which of these is not a valid way to define a dictionary?",
+      "level": "Intermediate",
+      "options": {"a": "{'key': 'value'}", "b": "dict(key='value')", "c": "{key = value}", "d": "dict([('key', 'value')])"},
+      "answer": "c"
+    },
+    {
+      "question_id": 26,
+      "category": "Python",
+      "type": 1,
+      "text": "How do you make a Python script executable from the terminal?",
+      "level": "Intermediate",
+      "options": {"a": "Add .exe at the end", "b": "Use chmod +x", "c": "Save as .bat", "d": "Install as a module"},
+      "answer": "b"
+    },
+    {
+      "question_id": 27,
+      "category": "Python",
+      "type": 1,
+      "text": "What is the purpose of __init__ method?",
+      "level": "Intermediate",
+      "options": {"a": "Destructor", "b": "Constructor", "c": "Overrider", "d": "Factory method"},
+      "answer": "b"
+    },
+    {
+      "question_id": 28,
+      "category": "Python",
+      "type": 1,
+      "text": "What is the output of set([1, 2, 2, 3])?",
+      "level": "Intermediate",
+      "options": {"a": "{1, 2, 2, 3}", "b": "{1, 2, 3}", "c": "[1, 2, 3]", "d": "Error"},
+      "answer": "b"
+    },
+    {
+      "question_id": 29,
+      "category": "Python",
+      "type": 1,
+      "text": "Which operator is used to check object identity?",
+      "level": "Intermediate",
+      "options": {"a": "==", "b": "!=", "c": "is", "d": "in"},
+      "answer": "c"
+    },
+    {
+      "question_id": 30,
+      "category": "Python",
+      "type": 1,
+      "text": "Which library is used for HTTP requests in Python?",
+      "level": "Intermediate",
+      "options": {"a": "urllib3", "b": "requests", "c": "socket", "d": "fetch"},
+      "answer": "b"
+    },
+    {
+      "question_id": 31,
+      "category": "Python",
+      "type": 1,
+      "text": "What will lambda x: x + 10 return?",
+      "level": "Advanced",
+      "options": {"a": "A function", "b": "10", "c": "Syntax error", "d": "None"},
+      "answer": "a"
+    },
+    {
+      "question_id": 32,
+      "category": "Python",
+      "type": 1,
+      "text": "Which function is used to iterate over two lists together?",
+      "level": "Advanced",
+      "options": {"a": "zip()", "b": "map()", "c": "enumerate()", "d": "list()"},
+      "answer": "a"
+    },
+    {
+      "question_id": 33,
+      "category": "Python",
+      "type": 1,
+      "text": "What is a generator in Python?",
+      "level": "Advanced",
+      "options": {"a": "A function that returns a list", "b": "A function that uses yield", "c": "A class", "d": "An iterator class"},
+      "answer": "b"
+    },
+    {
+      "question_id": 34,
+      "category": "Python",
+      "type": 1,
+      "text": "Which of the following is used for concurrency in Python?",
+      "level": "Advanced",
+      "options": {"a": "threads", "b": "multiprocessing", "c": "asyncio", "d": "all of the above"},
+      "answer": "d"
+    },
+    {
+      "question_id": 35,
+      "category": "Python",
+      "type": 1,
+      "text": "Which protocol does smtplib use?",
+      "level": "Advanced",
+      "options": {"a": "SMTP", "b": "POP3", "c": "IMAP", "d": "HTTP"},
+      "answer": "a"
+    },
+    {
+      "question_id": 36,
+      "category": "Python",
+      "type": 1,
+      "text": "What is the use of @staticmethod?",
+      "level": "Advanced",
+      "options": {"a": "To make a method static", "b": "To create a class method", "c": "To bind method to class", "d": "To create an instance"},
+      "answer": "a"
+    },
+    {
+      "question_id": 37,
+      "category": "Python",
+      "type": 1,
+      "text": "Which one of these is not a valid Python data type?",
+      "level": "Advanced",
+      "options": {"a": "list", "b": "tuple", "c": "array", "d": "set"},
+      "answer": "c"
+    },
+    {
+      "question_id": 38,
+      "category": "Python",
+      "type": 1,
+      "text": "How can you handle file closing safely in Python?",
+      "level": "Advanced",
+      "options": {"a": "open(...).close()", "b": "try...finally", "c": "with open(...) as f:", "d": "f.close()"},
+      "answer": "c"
+    },
+    {
+      "question_id": 39,
+      "category": "Python",
+      "type": 1,
+      "text": "What is the default encoding for open() in Python 3?",
+      "level": "Advanced",
+      "options": {"a": "utf-8", "b": "ascii", "c": "latin-1", "d": "iso-8859"},
+      "answer": "a"
+    },
+    {
+      "question_id": 40,
+      "category": "Python",
+      "type": 1,
+      "text": "What is the use of globals() in Python?",
+      "level": "Advanced",
+      "options": {"a": "Returns global variables as a dictionary", "b": "Returns local variables", "c": "Lists built-in functions", "d": "None"},
+      "answer": "a"
+    },
+    {
+      "question_id": 41,
+      "category": "Python",
+      "type": 1,
+      "text": "Which function is used to serialize an object in Python?",
+      "level": "Advanced",
+      "options": {"a": "json.load()", "b": "pickle.dumps()", "c": "zip()", "d": "marshal.read()"},
+      "answer": "b"
+    },
+    {
+      "question_id": 42,
+      "category": "Python",
+      "type": 1,
+      "text": "How can you define a virtual environment in Python?",
+      "level": "Advanced",
+      "options": {"a": "python -m venv env", "b": "venv create env", "c": "pip install venv", "d": "python venv.py"},
+      "answer": "a"
+    },
+    {
+      "question_id": 43,
+      "category": "Python",
+      "type": 1,
+      "text": "Which module allows interaction with the operating system?",
+      "level": "Advanced",
+      "options": {"a": "os", "b": "sys", "c": "shutil", "d": "subprocess"},
+      "answer": "a"
+    },
+    {
+      "question_id": 44,
+      "category": "Python",
+      "type": 1,
+      "text": "What does assert do in Python?",
+      "level": "Advanced",
+      "options": {"a": "Stops execution always", "b": "Checks a condition and throws AssertionError if False", "c": "Logs an error", "d": "Compiles the code"},
+      "answer": "b"
+    },
+    {
+      "question_id": 45,
+      "category": "Python",
+      "type": 1,
+      "text": "What is the output of None == False?",
+      "level": "Advanced",
+      "options": {"a": "True", "b": "False", "c": "None", "d": "Error"},
+      "answer": "b"
+    },
+    
+    {
+      "question_id": 46,
+      "category": "Python",
+      "type": 2,
+      "text": "Explain the difference between a list and a tuple in Python.",
+      "level": "Basic",
+      "answer": "A list is mutable, defined with [], and allows modifications. A tuple is immutable, defined with (), and cannot be changed after creation."
+    },
+    {
+      "question_id": 47,
+      "category": "Python",
+      "type": 2,
+      "text": "What is the purpose of the 'self' parameter in Python class methods?",
+      "level": "Basic",
+      "answer": "'self' refers to the instance of the class, used to access instance variables and methods."
+    },
+    {
+      "question_id": 48,
+      "category": "Python",
+      "type": 2,
+      "text": "Describe how Python's garbage collection works.",
+      "level": "Basic",
+      "answer": "Python uses reference counting and a cyclic garbage collector to manage memory, deallocating objects with zero references and handling cycles."
+    },
+    {
+      "question_id": 49,
+      "category": "Python",
+      "type": 2,
+      "text": "What are Python decorators, and how are they used?",
+      "level": "Intermediate",
+      "answer": "Decorators modify or extend function behavior using the '@' symbol, wrapping a function to add functionality without altering its code."
+    },
+    {
+      "question_id": 50,
+      "category": "Python",
+      "type": 2,
+      "text": "Explain the Global Interpreter Lock (GIL) in Python.",
+      "level": "Intermediate",
+      "answer": "The GIL is a mutex in CPython that prevents multiple threads from executing Python bytecodes simultaneously, limiting CPU-bound multi-threading."
+    },
+    {
+      "question_id": 51,
+      "category": "Python",
+      "type": 2,
+      "text": "What is the difference between 'deep copy' and 'shallow copy'?",
+      "level": "Intermediate",
+      "answer": "Shallow copy creates a new object but references nested objects; deep copy recursively copies all objects, creating a fully independent copy."
+    },
+    {
+      "question_id": 52,
+      "category": "Python",
+      "type": 2,
+      "text": "How does Python handle exceptions?",
+      "level": "Intermediate",
+      "answer": "Python uses try/except blocks to catch and handle exceptions, allowing graceful error management."
+    },
+    {
+      "question_id": 53,
+      "category": "Python",
+      "type": 2,
+      "text": "What are generators, and how do they differ from lists?",
+      "level": "Intermediate",
+      "answer": "Generators yield values one at a time using 'yield', saving memory compared to lists, which store all elements."
+    },
+    {
+      "question_id": 54,
+      "category": "Python",
+      "type": 2,
+      "text": "Explain the purpose of the __init__ method.",
+      "level": "Intermediate",
+      "answer": "__init__ is a constructor that initializes instance attributes when a class object is created."
+    },
+    {
+      "question_id": 55,
+      "category": "Python",
+      "type": 2,
+      "text": "What is a lambda function, and when is it used?",
+      "level": "Intermediate",
+      "answer": "Lambda functions are anonymous, single-expression functions used for simple operations in functions like map() or filter()."
+    },
+    {
+      "question_id": 56,
+      "category": "Python",
+      "type": 2,
+      "text": "What is the significance of the 'with' statement?",
+      "level": "Advanced",
+      "answer": "The 'with' statement manages resources (e.g., files) using context managers, ensuring proper cleanup even if errors occur."
+    },
+    {
+      "question_id": 57,
+      "category": "Python",
+      "type": 2,
+      "text": "How does Python support concurrency?",
+      "level": "Advanced",
+      "answer": "Python supports concurrency via threading (limited by GIL), multiprocessing, and asyncio for I/O-bound tasks."
+    },
+    
+    {
+      "question_id": 58,
+      "category": "Python",
+      "type": 3,
+      "text": "Write a Python function to reverse a string.",
+      "level": "Basic",
+      "answer": "def reverse_string(s):\n    return s[::-1]"
+    },
+    {
+      "question_id": 59,
+      "category": "Python",
+      "type": 3,
+      "text": "Write a Python function to check if a number is prime.",
+      "level": "Basic",
+      "answer": "def is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True"
+    },
+    {
+      "question_id": 60,
+      "category": "Python",
+      "type": 3,
+      "text": "Write a Python function to find the factorial of a number.",
+      "level": "Basic",
+      "answer": "def factorial(n):\n    if n == 0 or n == 1:\n        return 1\n    return n * factorial(n - 1)"
+    }
+  ]

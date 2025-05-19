@@ -1,51 +1,101 @@
-from fastapi import APIRouter, Depends, HTTPException
-from app.models.users import CandidateRegister
+from fastapi import APIRouter, HTTPException
+from app.models.users import CandidateRegister, StartExamResponse, Question
 from datetime import datetime
-from app.database.connection import candidate_collection
+from app.database.connection import candidate_collection, question_collection
 from fastapi import Body
+from bson import ObjectId
+import logging
 
-# define the routers
-router =APIRouter(prefix="/interview_questions", tags=["users"], responses={404:{"description":"Not Found"}})
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+router = APIRouter(prefix="/interview_questions", tags=["users"], responses={404: {"description": "Not Found"}})
 
 @router.post("/register_candidate")
-
-async def register_candidate(candidate:CandidateRegister):
-    """
-    Register a new candidate.
-    """
-    existing_candidate=candidate_collection.find_one({"email":candidate.email})
+async def register_candidate(candidate: CandidateRegister):
+    """Register a candidate, checking for existing email."""
+    # Check for existing candidate by email
+    existing_candidate = candidate_collection.find_one({"email": candidate.email})
     if existing_candidate:
-        return{
-            "message":"Candidate already registered",
-            "candidate_email":existing_candidate["email"],
-            "candidate_name":existing_candidate["first_name"]
+        logger.info(f"Existing candidate found: {existing_candidate}")
+        return {
+            "message": "Candidate already registered",
+            "candidate_id": str(existing_candidate["_id"]),
+            "candidate_name": existing_candidate["first_name"]
         }
-    # check if the candidate already exists
-    candidate_data={
-        **candidate.dict(),
-        "registered_at":datetime.utcnow(),
-        "exam_started_at":None
+
+    # Register new candidate
+    candidate_data = {
+        "first_name": candidate.first_name,
+        "last_name": candidate.last_name,
+        "email": candidate.email,
+        "phone_number": candidate.phone_number,
+        "registered_at": datetime.utcnow().isoformat(),
+        "exam_started_at": None
+    }
+    result = candidate_collection.insert_one(candidate_data)
+    candidate_id = str(result.inserted_id)
+    logger.info(f"New candidate registered: {candidate_data}, _id: {candidate_id}")
+    return {
+        "message": "Candidate registered successfully",
+        "candidate_id": candidate_id,
+        "candidate_name": candidate.first_name
     }
 
-    candidate_collection.insert_one(candidate_data)
-    
-    return {
-        "message":"Candidate registered successfully",
-         "candidate_email":candidate.email,
-          "candidate_name":candidate.first_name
-          }
-
-@router.post("/start_exam")
-
-async def start_exam(email:str=Body(..., embed=True)):
-    """
-    Start the exam for a candidate.
-    """
-    candidate=candidate_collection.find_one({"email":email})
+@router.post("/start_exam", response_model=StartExamResponse)
+async def start_exam(candidate_id: str = Body(..., embed=True)):
+    """Start the exam and return all 45 MCQs, 12 Descriptive, and 3 Coding questions."""
+    try:
+        candidate = candidate_collection.find_one({"_id": ObjectId(candidate_id)})
+    except Exception:
+        raise HTTPException(status_code=400, detail="Invalid candidate_id format")
     if not candidate:
         raise HTTPException(status_code=404, detail="Candidate not found")
     if candidate.get("exam_started_at"):
         raise HTTPException(status_code=400, detail="Exam already started")
     
-    candidate_collection.update_one({"email":email},{"$set":{"exam_started_at":datetime.utcnow()}})
-    return {"message":"Exam started successfully"}
+    # Mark exam as started
+    candidate_collection.update_one(
+        {"_id": ObjectId(candidate_id)},
+        {"$set": {"exam_started_at": datetime.utcnow().isoformat()}}
+    )
+    
+    # Fetch all questions
+    mcq_questions = question_collection.find({"type": 1})  # 45 MCQs
+    descriptive_questions = question_collection.find({"type": 2})  # 12 Descriptive
+    coding_questions = question_collection.find({"type": 3})  # 3 Coding
+    
+    return StartExamResponse(
+        candidate_id=candidate_id,
+        mcq_questions=[
+            {
+                "question_id": q["question_id"],
+                "category": q["category"],
+                "type": q["type"],
+                "text": q["text"],
+                "options": q.get("options"),
+                "level": q["level"]
+            } for q in mcq_questions
+        ],
+        descriptive_questions=[
+            {
+                "question_id": q["question_id"],
+                "category": q["category"],
+                "type": q["type"],
+                "text": q["text"],
+                "options": None,
+                "level": q["level"]
+            } for q in descriptive_questions
+        ],
+        coding_questions=[
+            {
+                "question_id": q["question_id"],
+                "category": q["category"],
+                "type": q["type"],
+                "text": q["text"],
+                "options": None,
+                "level": q["level"]
+            } for q in coding_questions
+        ]
+    )

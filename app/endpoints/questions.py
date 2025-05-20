@@ -44,7 +44,7 @@ async def register_candidate(candidate: CandidateRegister):
     }
 
 @router.get("/start_exam", response_model=StartExamResponse)
-async def start_exam(candidate_id: str = Body(..., embed=True)):
+async def start_exam(candidate_id: str):
     """Start the exam and return all 45 MCQs, 12 Descriptive, and 3 Coding questions."""
     try:
         candidate = candidate_collection.find_one({"_id": ObjectId(candidate_id)})
@@ -52,8 +52,8 @@ async def start_exam(candidate_id: str = Body(..., embed=True)):
         raise HTTPException(status_code=400, detail="Invalid candidate_id format")
     if not candidate:
         raise HTTPException(status_code=404, detail="Candidate not found")
-    if candidate.get("exam_started_at"):
-        raise HTTPException(status_code=400, detail="Exam already started")
+    # if candidate.get("exam_started_at"):
+    #     raise HTTPException(status_code=400, detail="Exam already started")
     
     # Mark exam as started
     candidate_collection.update_one(
@@ -62,9 +62,9 @@ async def start_exam(candidate_id: str = Body(..., embed=True)):
     )
     
     # Fetch all questions
-    mcq_questions = question_collection.find({"type": 1})  # 45 MCQs
-    descriptive_questions = question_collection.find({"type": 2})  # 12 Descriptive
-    coding_questions = question_collection.find({"type": 3})  # 3 Coding
+    mcq_questions = list(question_collection.find({"type": 1}))  # 45 MCQs
+    descriptive_questions = list(question_collection.find({"type": 2}))  # 12 Descriptive
+    coding_questions = list(question_collection.find({"type": 3}))  # 3 Coding
     
     return StartExamResponse(
         candidate_id=candidate_id,
